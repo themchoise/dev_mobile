@@ -7,25 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="729dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="288dp">
+        tools:layout_editor_absoluteY="1dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button_tp0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Ingrese Texto" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+            android:layout_marginTop="208dp"
+            android:text="Button"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="128dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

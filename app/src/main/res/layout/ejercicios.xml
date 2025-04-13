@@ -70,7 +70,8 @@
             android:layout_marginTop="150dp"
             android:id="@+id/editTextText"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="1dp">
+            tools:layout_editor_absoluteX="1dp"
+            tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="349dp"

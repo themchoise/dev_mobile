@@ -1,12 +1,10 @@
-package com.example.mjoyce
+package com.example.mjoyce.tp0
 
 import android.annotation.SuppressLint
 import android.widget.Button;
-import android.widget.Toast;
 import android.content.Context;
 import android.graphics.Color
 import android.widget.EditText
-import androidx.core.text.set
 
 class Ejercicio(private val context: Context) {
 
