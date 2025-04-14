@@ -13,6 +13,7 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -20,6 +21,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -32,6 +34,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    splits {
+        abi {
+            reset()
+            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        }
     }
 }
 

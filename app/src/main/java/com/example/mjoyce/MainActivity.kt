@@ -1,4 +1,5 @@
 package com.example.mjoyce
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,7 @@ import com.example.mjoyce.tp1.CalculadoraView
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,11 +26,18 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val boton1=findViewById<Button>(R.id.button_tp0)
+        val boton1=findViewById<Button>(R.id.btntp0)
         boton1.setOnClickListener {
             val intento1 = Intent(this, MainTp::class.java)
             startActivity(intento1)
         }
+
+        findViewById<Button>(R.id.btntp2).setOnClickListener{
+            startActivity(Intent(this, CalculadoraView::class.java))
+        }
+
+
+
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 

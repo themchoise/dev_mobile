@@ -1,8 +1,11 @@
 package com.example.mjoyce.tp1
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -11,8 +14,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.mjoyce.R
 import com.example.mjoyce.tp0.Ejercicio
 
-class CalculadoraView : AppCompatActivity()  {
+class CalculadoraView : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +25,55 @@ class CalculadoraView : AppCompatActivity()  {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val calc = Calculadora()
+
+        val buttons: List<Button> = listOf(
+            findViewById(R.id.btn0),
+            findViewById(R.id.btn1),
+            findViewById(R.id.btn2),
+            findViewById(R.id.btn3),
+            findViewById(R.id.btn4),
+            findViewById(R.id.btn5),
+            findViewById(R.id.btn6),
+            findViewById(R.id.btn7),
+            findViewById(R.id.btn8),
+            findViewById(R.id.btn9)
+        )
+        val btnSuma: Button = findViewById(R.id.btnSum)
+        val btnResta: Button = findViewById(R.id.btnResta)
+        val btnResult: Button = findViewById(R.id.btnResult)
+        val textShowResult: TextView = findViewById(R.id.resultText)
+        val textScreenTextButtonsPushed: TextView = findViewById(R.id.screenTextButtonsPushed)
+
+
+
+        buttons.forEach { button ->
+            button.setOnClickListener {
+                textScreenTextButtonsPushed.text =
+                    textScreenTextButtonsPushed.text.toString() + " " + button.text.toString() + " "
+                if (calc.operation == Operaciones.STANDBY) {
+                    calc.firstValue = (button.text.toString().toLong())
+                } else {
+                    calc.secondValue = (button.text.toString().toLong())
+                }
+
+            }
+        }
+        btnSuma.setOnClickListener {
+            textScreenTextButtonsPushed.text =
+                textScreenTextButtonsPushed.text.toString() + " " + btnSuma.text.toString() + " "
+            calc.operation = Operaciones.SUM
+        }
+        btnResta.setOnClickListener {
+            textScreenTextButtonsPushed.text =
+                textScreenTextButtonsPushed.text.toString() + " " + btnResta.text.toString() + " "
+            calc.operation = Operaciones.RES
+        }
+        btnResult.setOnClickListener {
+            calc.procesar()
+            textShowResult.text = calc.result.toString()
+
         }
 
 
