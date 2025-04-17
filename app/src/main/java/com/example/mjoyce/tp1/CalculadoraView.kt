@@ -42,38 +42,61 @@ class CalculadoraView : AppCompatActivity() {
         )
         val btnSuma: Button = findViewById(R.id.btnSum)
         val btnResta: Button = findViewById(R.id.btnResta)
+        val btnDiv: Button = findViewById(R.id.btnDiv)
+        val btnMult: Button = findViewById(R.id.btnMult)
         val btnResult: Button = findViewById(R.id.btnResult)
+        val btnClean: Button = findViewById(R.id.btnClear)
         val textShowResult: TextView = findViewById(R.id.resultText)
         val textScreenTextButtonsPushed: TextView = findViewById(R.id.screenTextButtonsPushed)
-
-
 
         buttons.forEach { button ->
             button.setOnClickListener {
                 textScreenTextButtonsPushed.text =
                     textScreenTextButtonsPushed.text.toString() + " " + button.text.toString() + " "
                 if (calc.operation == Operaciones.STANDBY) {
-                    calc.firstValue = (button.text.toString().toLong())
+                    calc.firstValue = (calc.firstValue.toString() + button.text.toString()).toLong()
                 } else {
-                    calc.secondValue = (button.text.toString().toLong())
+                    println("R")
+                    calc.secondValue =
+                        (calc.secondValue.toString() + button.text.toString()).toLong()
                 }
-
             }
         }
         btnSuma.setOnClickListener {
+
             textScreenTextButtonsPushed.text =
                 textScreenTextButtonsPushed.text.toString() + " " + btnSuma.text.toString() + " "
             calc.operation = Operaciones.SUM
         }
         btnResta.setOnClickListener {
+
             textScreenTextButtonsPushed.text =
                 textScreenTextButtonsPushed.text.toString() + " " + btnResta.text.toString() + " "
             calc.operation = Operaciones.RES
         }
         btnResult.setOnClickListener {
-            calc.procesar()
-            textShowResult.text = calc.result.toString()
+            calc.procesar(textShowResult, textScreenTextButtonsPushed)
+        }
 
+        btnClean.setOnClickListener {
+            textScreenTextButtonsPushed.text = ""
+            textShowResult.text = "0"
+            calc.limpiar()
+            println("Hola")
+        }
+        btnDiv.setOnClickListener {
+          
+            textScreenTextButtonsPushed.text =
+                textScreenTextButtonsPushed.text.toString() + " " + btnDiv.text.toString() + " "
+            calc.operation = Operaciones.DIV
+        }
+
+
+        btnMult.setOnClickListener {
+
+            textScreenTextButtonsPushed.text =
+                textScreenTextButtonsPushed.text.toString() + " " + btnMult.text.toString() + " "
+            calc.operation = Operaciones.MULT
         }
 
 

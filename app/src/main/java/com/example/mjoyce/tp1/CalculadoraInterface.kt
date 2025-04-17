@@ -1,5 +1,6 @@
 package com.example.mjoyce.tp1
 
+import android.widget.TextView
 import java.math.BigInteger
 
 interface CalculadoraInterface {
@@ -9,7 +10,8 @@ interface CalculadoraInterface {
     fun restar()
     fun dividir()
     fun multiplicar()
-    fun procesar()
+    fun procesar(textShowResult: TextView, textScreenTextButtonsPushed: TextView)
+    fun limpiar()
 
 
 }
