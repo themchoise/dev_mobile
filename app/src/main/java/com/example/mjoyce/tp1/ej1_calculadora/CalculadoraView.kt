@@ -1,18 +1,14 @@
-package com.example.mjoyce.tp1
+package com.example.mjoyce.tp1.ej1_calculadora
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mjoyce.R
-import com.example.mjoyce.tp0.Ejercicio
 
 class CalculadoraView : AppCompatActivity() {
 
@@ -85,7 +81,7 @@ class CalculadoraView : AppCompatActivity() {
             println("Hola")
         }
         btnDiv.setOnClickListener {
-          
+
             textScreenTextButtonsPushed.text =
                 textScreenTextButtonsPushed.text.toString() + " " + btnDiv.text.toString() + " "
             calc.operation = Operaciones.DIV

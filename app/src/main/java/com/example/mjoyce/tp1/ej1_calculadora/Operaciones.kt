@@ -1,4 +1,4 @@
-package com.example.mjoyce.tp1
+package com.example.mjoyce.tp1.ej1_calculadora
 
 enum class Operaciones {
 

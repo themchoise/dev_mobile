@@ -1,5 +1,5 @@
 package com.example.mjoyce
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mjoyce.tp0.MainTp
-import com.example.mjoyce.tp1.CalculadoraView
+import com.example.mjoyce.tp1.ej1_calculadora.CalculadoraView
+import com.example.mjoyce.tp1.ej2_conversor.ConversorView
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,14 +27,18 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val boton1=findViewById<Button>(R.id.btntp0)
+        val boton1 = findViewById<Button>(R.id.btntp0)
         boton1.setOnClickListener {
             val intento1 = Intent(this, MainTp::class.java)
             startActivity(intento1)
         }
 
-        findViewById<Button>(R.id.btntp2).setOnClickListener{
+        findViewById<Button>(R.id.btntp2_calculadora).setOnClickListener {
             startActivity(Intent(this, CalculadoraView::class.java))
+        }
+
+        findViewById<Button>(R.id.btntp2_conversor).setOnClickListener {
+            startActivity(Intent(this, ConversorView::class.java))
         }
 
 
@@ -41,5 +46,5 @@ class MainActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-        }
     }
+}

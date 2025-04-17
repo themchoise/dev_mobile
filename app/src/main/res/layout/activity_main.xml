@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5">
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -46,11 +46,18 @@
                     android:text="Acceder Al TP 0" />
 
                 <Button
-                    android:id="@+id/btntp2"
+                    android:id="@+id/btntp2_calculadora"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
-                    android:text="Acceder al TP 1" />
+                    android:text="Acceder al TP 1-Calculadora" />
+
+                <Button
+                    android:id="@+id/btntp2_conversor"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Acceder al TP 1-Conversor" />
 
             </LinearLayout>
 
