@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/numero"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntaje: 5"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/attemptsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chances restantes: 5"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <EditText
+        android:id="@+id/guessInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese un número"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/checkGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verificar" />
+
+    <TextView
+        android:id="@+id/feedbackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:textColor="#000000" />
+</LinearLayout>

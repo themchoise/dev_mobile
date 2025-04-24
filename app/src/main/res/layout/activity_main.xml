@@ -59,6 +59,20 @@
                     android:layout_marginTop="15dp"
                     android:text="Acceder al TP 1-Conversor" />
 
+                <Button
+                    android:id="@+id/btntp2_palindromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Acceder al TP 1-Palindromo" />
+
+                <Button
+                    android:id="@+id/btntp2_numero"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Acceder al TP 1-Numero" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

@@ -38,7 +38,8 @@ class ConversorView : AppCompatActivity() {
             insets
         }
 
-        val spinner: Spinner = findViewById(R.id.spnLoad)
+        //val spinner: Spinner = findViewById(R.id.sp)
+
         CoroutineScope(Dispatchers.Main).launch {
             val apiStart = ApiCurrency()
             var currSelected: String = ""
@@ -76,8 +77,8 @@ class ConversorView : AppCompatActivity() {
                         buttons.filter { it.text.toString() != currencySelected }.forEach {
                             it.isChecked = false
                         }
-                        spinner.isEnabled = true
-                        spinner.visibility = View.VISIBLE
+                        //   spinner.isEnabled = true
+                        //   spinner.visibility = View.VISIBLE
                         val result = valueToConvert.text.toString()
                             .toFloat() * currency.rates[currencySelected].toString().toFloat()
                         valueResult.text = "$currencySelected: $result"

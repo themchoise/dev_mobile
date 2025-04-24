@@ -1,5 +1,6 @@
 package com.example.mjoyce
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -9,9 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+
 import com.example.mjoyce.tp0.MainTp
 import com.example.mjoyce.tp1.ej1_calculadora.CalculadoraView
 import com.example.mjoyce.tp1.ej2_conversor.ConversorView
+import com.example.mjoyce.tp1.ej3_palindromos_vocales.PalindromoView
+import com.example.mjoyce.tp1.ej_4_numero.NumeroView
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,7 +45,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ConversorView::class.java))
         }
 
+        findViewById<Button>(R.id.btntp2_palindromo).setOnClickListener {
+            startActivity(Intent(this, PalindromoView::class.java))
+        }
 
+        findViewById<Button>(R.id.btntp2_numero).setOnClickListener {
+            startActivity(Intent(this, NumeroView::class.java))
+        }
 
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)

@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".tp0.MainTp"
             android:exported="true">
@@ -37,6 +38,24 @@
         </activity>
         <activity
             android:name=".tp1.ej1_calculadora.CalculadoraView"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tp1.ej3_palindromos_vocales.PalindromoView"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tp1.ej_4_numero.NumeroView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
